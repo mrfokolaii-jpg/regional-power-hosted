@@ -19,14 +19,14 @@ npm run preview
 
 ## اندروید و دانلود APK
 
-پروژه با Capacitor برای Android WebView آماده است. هر بار که این شاخه به GitHub push شود، GitHub Actions به‌طور خودکار با JDK 17 و Android SDK، APK را می‌سازد. پس از موفقیت ساخت:
+پروژه با Capacitor برای Android WebView آماده است. هر بار که این شاخه به GitHub push شود، GitHub Actions به‌طور خودکار با JDK 21 و Android SDK، APK را می‌سازد. پس از موفقیت ساخت:
 
 - APK عمومی از صفحه‌ی [Releases](https://github.com/mrfokolaii-jpg/regional-power-hosted/releases/tag/android-latest) دریافت می‌شود.
 - همان فایل به‌مدت ۳۰ روز در بخش **Actions → آخرین اجرای Build Android APK → Artifacts** هم در دسترس خواهد بود.
 
 APK تولیدشده debug-signed است و برای نصب آزمایشی و sideload مناسب است؛ برای انتشار فروشگاهی باید با کلید امضای خصوصی خودتان نسخه‌ی release بسازید. APK را در این محیط کامپایل نکرده‌ام؛ ساخت خودکار به محض push اجرا می‌شود.
 
-برای ساخت محلی، Android Studio، JDK 17 و Android SDK نصب کنید:
+برای ساخت محلی، Android Studio، JDK 21 و Android SDK نصب کنید:
 
 ```bash
 npm install
