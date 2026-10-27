@@ -57,9 +57,18 @@ jobs:
 
       - name: Compile debug APK
         working-directory: android
+        shell: bash
         run: |
           chmod +x gradlew
-          ./gradlew --no-daemon assembleDebug
+          set +e
+          ./gradlew --no-daemon assembleDebug 2>&1 | tee "$RUNNER_TEMP/gradle-build.log"
+          result=${PIPESTATUS[0]}
+          if [[ $result -ne 0 ]]; then
+            tail -n 55 "$RUNNER_TEMP/gradle-build.log" >> "$GITHUB_STEP_SUMMARY"
+            details=$(tail -n 12 "$RUNNER_TEMP/gradle-build.log" | sed 's/::/%3A%3A/g' | tr '\n' ' ' | cut -c1-1000)
+            echo "::error title=Gradle build failed::$details"
+            exit "$result"
+          fi
 
       - name: Name APK for download
         run: cp android/app/build/outputs/apk/debug/app-debug.apk Guardians-of-the-Plateau-Android.apk
