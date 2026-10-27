@@ -1,0 +1,12 @@
+{
+  "name": "نگهبانان فلات | نبرد برای شهرها",
+  "short_name": "نگهبانان فلات",
+  "lang": "fa",
+  "dir": "rtl",
+  "start_url": "/",
+  "display": "fullscreen",
+  "background_color": "#08110f",
+  "theme_color": "#08110f",
+  "orientation": "landscape",
+  "icons": [{ "src": "/icon.svg", "sizes": "any", "type": "image/svg+xml", "purpose": "any maskable" }]
+}
